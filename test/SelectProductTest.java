@@ -28,7 +28,7 @@ public class SelectProductTest {
         machine.acceptValidCoins("dime");
         machine.acceptValidCoins("nickel");
 
-        assertEquals(65, machine.dispenseCandy());
+        assertEquals("65", machine.dispenseCandy());
     }
 
 }
