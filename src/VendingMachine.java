@@ -27,7 +27,7 @@ public class VendingMachine {
     }
 
     public String acceptValidCoins(String coin) {
-        if (coin == "nickel" || coin == "dime" || coin == "quarter") {
+        if (coin.equals("nickel") || coin.equals("dime") || coin.equals("quarter")) {
             creditUser(coin);
             return credit.toString();
         }
@@ -35,10 +35,10 @@ public class VendingMachine {
     }
 
     private void creditUser(String coin) {
-        if (coin == "nickel") {
+        if (coin.equals("nickel")) {
             credit += 5;
         }
-        else if (coin == "dime") {
+        else if (coin.equals("dime")) {
             credit += 10;
         }
         else { credit += 25; }
@@ -47,9 +47,12 @@ public class VendingMachine {
     public String dispenseProduct(Integer product) {
         Integer credit = getCredit();
         if (credit >= product) {
-            //dispense.product
+            setCredit(0);
             return "THANK YOU";
         }
+//        else if (credit > 0 && credit < product) {
+//            return "INSERT COIN\n";
+//        }
         else return product.toString();
     }
 }
