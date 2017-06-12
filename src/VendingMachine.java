@@ -3,6 +3,7 @@ public class VendingMachine {
 
     private static final Integer COLA = 100;
     private static final Integer CHIPS = 50;
+    private static final Integer CANDY = 65;
 
     public static Integer getCOLA() {
         return COLA;
@@ -15,8 +16,6 @@ public class VendingMachine {
     public static Integer getCANDY() {
         return CANDY;
     }
-
-    private static final Integer CANDY = 65;
     private Integer credit;
 
     public Integer getCredit() {

@@ -43,5 +43,20 @@ public class SelectProductTest {
         assertEquals("THANK YOU", machine.dispenseProduct(VendingMachine.getCOLA()));
     }
 
+    @Test
+    public void machineDispensesSodaWithIncorrectCredit() {
+        machine.acceptValidCoins("quarter");
+
+        assertEquals("100", machine.dispenseProduct(VendingMachine.getCOLA()));
+    }
+
+    @Test
+    public void machineDispensesChipsWithCorrectCredit() {
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("quarter");
+
+        assertEquals("THANK YOU", machine.dispenseProduct(VendingMachine.getCHIPS()));
+    }
+
 
 }
