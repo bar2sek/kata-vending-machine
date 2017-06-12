@@ -24,11 +24,21 @@ public class AcceptCoinsTest {
     }
 
     @Test
-    public void machineAbleToRejectBadCoinsInserted() {
+    public void machineAbleToIdentifyBadCoinsInserted() {
 
         String coinInserted = "asdfasfasdf";
 
         assertEquals("coin not valid", machine.acceptValidCoins(coinInserted));
+    }
+
+    @Test
+    public void addValidCoinsToDisplay() {
+
+    }
+
+    @Test
+    public void invalidCoinsPlacedInCoinReturn() {
+
     }
 
 }
