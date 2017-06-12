@@ -1,7 +1,10 @@
 
 public class VendingMachine {
 
-    private Integer credit = 0;
+    private static final int COLA = 100;
+    private static final int CHIPS = 50;
+    private static final int CANDY = 65;
+    private Integer credit;
 
     public Integer getCredit() {
         return credit;
@@ -11,10 +14,9 @@ public class VendingMachine {
         this.credit = credit;
     }
 
-    public String getTotalCredit(String coin) {
-        creditUser(coin);
-        coin = credit.toString();
-        return coin;
+    public String getTotalCredit() {
+        String total = credit.toString();
+        return total;
     }
 
     public String acceptValidCoins(String coin) {

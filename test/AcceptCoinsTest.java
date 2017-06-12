@@ -23,29 +23,30 @@ public class AcceptCoinsTest {
     @Test
     public void machineAbleToIdentifyGoodCoinsInserted() {
 
-        String coinInserted = "dime";
-
-        assertEquals("10", machine.acceptValidCoins(coinInserted));
+        assertEquals("10", machine.acceptValidCoins("dime"));
     }
 
     @Test
     public void machineAbleToIdentifyAQuarterInserted() {
 
-        String coinInserted = "quarter";
-
-        assertEquals("25", machine.acceptValidCoins(coinInserted));
+        assertEquals("25", machine.acceptValidCoins("quarter"));
     }
 
     @Test
     public void addCreditsForMultipleCoinsInserted() {
 
-        assertEquals("25", machine.getTotalCredit("quarter"));
-        assertEquals("35", machine.getTotalCredit("dime"));
+        assertEquals("25", machine.acceptValidCoins("quarter"));
+        assertEquals("35", machine.acceptValidCoins("dime"));
     }
 
-//    @Test
-//    public void machineReturnsBadCoinsToCoinReturn() {
-//
-//    }
+    @Test
+    public void getTotalCreditsReceived() {
+
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("dime");
+        machine.acceptValidCoins("nickel");
+
+        assertEquals("40", machine.getTotalCredit());
+    }
 
 }
