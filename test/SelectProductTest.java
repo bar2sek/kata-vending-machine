@@ -19,7 +19,7 @@ public class SelectProductTest {
         machine.acceptValidCoins("dime");
         machine.acceptValidCoins("nickel");
 
-        assertEquals("THANK YOU", machine.dispenseCandy());
+        assertEquals("THANK YOU", machine.dispenseProduct(VendingMachine.getCANDY()));
     }
 
     @Test
@@ -28,7 +28,7 @@ public class SelectProductTest {
         machine.acceptValidCoins("dime");
         machine.acceptValidCoins("nickel");
 
-        assertEquals("65", machine.dispenseCandy());
+        assertEquals("65", machine.dispenseProduct(VendingMachine.getCANDY()));
     }
 
     @Test
@@ -40,7 +40,7 @@ public class SelectProductTest {
         machine.acceptValidCoins("dime");
         machine.acceptValidCoins("nickel");
 
-        assertEquals("THANK YOU", machine.dispenseSoda());
+        assertEquals("THANK YOU", machine.dispenseProduct(VendingMachine.getCOLA()));
     }
 
 

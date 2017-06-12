@@ -3,6 +3,19 @@ public class VendingMachine {
 
     private static final Integer COLA = 100;
     private static final Integer CHIPS = 50;
+
+    public static Integer getCOLA() {
+        return COLA;
+    }
+
+    public static Integer getCHIPS() {
+        return CHIPS;
+    }
+
+    public static Integer getCANDY() {
+        return CANDY;
+    }
+
     private static final Integer CANDY = 65;
     private Integer credit;
 
@@ -32,22 +45,12 @@ public class VendingMachine {
         else { credit += 25; }
     }
 
-    public String dispenseCandy() {
+    public String dispenseProduct(Integer product) {
         Integer credit = getCredit();
-        if (credit >= CANDY) {
+        if (credit >= product) {
             //dispense.product
             return "THANK YOU";
         }
-        else return CANDY.toString();
-    }
-
-    public String dispenseSoda() {
-        Integer credit = getCredit();
-        if (credit >= COLA) {
-            //dispense.product
-            return "THANK YOU";
-        }
-        else return COLA.toString();
-
+        else return product.toString();
     }
 }
