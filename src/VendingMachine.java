@@ -1,9 +1,9 @@
 
 public class VendingMachine {
 
-    private static final int COLA = 100;
-    private static final int CHIPS = 50;
-    private static final int CANDY = 65;
+    private static final Integer COLA = 100;
+    private static final Integer CHIPS = 50;
+    private static final Integer CANDY = 65;
     private Integer credit;
 
     public Integer getCredit() {
@@ -12,11 +12,6 @@ public class VendingMachine {
 
     public void setCredit(Integer credit) {
         this.credit = credit;
-    }
-
-    public String getTotalCredit() {
-        String total = credit.toString();
-        return total;
     }
 
     public String acceptValidCoins(String coin) {
@@ -35,5 +30,14 @@ public class VendingMachine {
             credit += 10;
         }
         else { credit += 25; }
+    }
+
+    public String dispenseCandy() {
+        Integer credit = getCredit();
+        if (credit >= CANDY) {
+            //dispense.product
+            return "THANK YOU";
+        }
+        else return CANDY.toString();
     }
 }

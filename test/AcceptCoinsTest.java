@@ -46,7 +46,7 @@ public class AcceptCoinsTest {
         machine.acceptValidCoins("dime");
         machine.acceptValidCoins("nickel");
 
-        assertEquals("40", machine.getTotalCredit());
+        assertEquals(new Integer(40), machine.getCredit());
     }
 
 }
