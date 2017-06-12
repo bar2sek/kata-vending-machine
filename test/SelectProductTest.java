@@ -31,4 +31,17 @@ public class SelectProductTest {
         assertEquals("65", machine.dispenseCandy());
     }
 
+    @Test
+    public void machineDispensesSodaWithCorrectCredit() {
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("dime");
+        machine.acceptValidCoins("dime");
+        machine.acceptValidCoins("nickel");
+
+        assertEquals("THANK YOU", machine.dispenseSoda());
+    }
+
+
 }

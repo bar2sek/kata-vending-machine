@@ -40,4 +40,14 @@ public class VendingMachine {
         }
         else return CANDY.toString();
     }
+
+    public String dispenseSoda() {
+        Integer credit = getCredit();
+        if (credit >= COLA) {
+            //dispense.product
+            return "THANK YOU";
+        }
+        else return COLA.toString();
+
+    }
 }
