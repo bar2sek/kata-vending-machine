@@ -6,9 +6,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         VendingMachine machine = new VendingMachine();
 
-        // while loop to wait for input?
         System.out.println("INSERT COIN\n");
         String coin = sc.next();
-        System.out.println("You inserted" + coin);
+        System.out.println(machine.acceptValidCoins(coin));
     }
 }
