@@ -9,18 +9,7 @@ public class AcceptCoinsTest {
     @Before
     public void setUp() {
         machine = new VendingMachine();
-    }
-
-    @Test
-    public void machineAcceptsAnyCoinWhenInserted() {
-
-        assertEquals("dime", machine.getCoinsInserted("dime"));
-    }
-
-    @Test
-    public void machineAcceptsNickelWhenInserted() {
-
-        assertEquals("nickel", machine.getCoinsInserted("nickel"));
+        machine.setCredit(0);
     }
 
     @Test
@@ -47,26 +36,15 @@ public class AcceptCoinsTest {
         assertEquals("25", machine.acceptValidCoins(coinInserted));
     }
 
+    @Test
+    public void addCreditsForMultipleCoinsInserted() {
+
+        assertEquals("25", machine.getTotalCredit("quarter"));
+        assertEquals("35", machine.getTotalCredit("dime"));
+    }
+
 //    @Test
 //    public void machineReturnsBadCoinsToCoinReturn() {
-//
-//    }
-
-//    @Test
-//    public void creditOneCoinInserted() {
-//
-//        String coinInserted = "dime";
-//
-//        assertEquals(10, machine.acceptValidCoins(coinInserted));
-//    }
-
-//    @Test
-//    public void creditMultipleCoinsInserted() {
-//
-//    }
-//
-//    @Test
-//    public void invalidCoinsPlacedInCoinReturn() {
 //
 //    }
 

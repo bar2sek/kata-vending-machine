@@ -1,10 +1,19 @@
 
 public class VendingMachine {
 
-    Integer credit = 0;
+    private Integer credit = 0;
 
-    public String getCoinsInserted(String coin) {
+    public Integer getCredit() {
+        return credit;
+    }
 
+    public void setCredit(Integer credit) {
+        this.credit = credit;
+    }
+
+    public String getTotalCredit(String coin) {
+        creditUser(coin);
+        coin = credit.toString();
         return coin;
     }
 
