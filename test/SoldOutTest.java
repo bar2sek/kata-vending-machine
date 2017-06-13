@@ -18,4 +18,11 @@ public class SoldOutTest {
         assertEquals("5", machine.checkStock(machine.getCandyStock()));
     }
 
+    @Test
+    public void displaySoldOutIfNoMoreOfAnyOneItem() {
+        machine.setCandyStock(0);
+
+        assertEquals("SOLD OUT", machine.checkStock(machine.getCandyStock()));
+    }
+
 }

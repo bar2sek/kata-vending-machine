@@ -101,6 +101,9 @@ public class VendingMachine {
     }
 
     public String checkStock(Integer productStock) {
-        return productStock.toString();
+        if (productStock > 0) {
+            return productStock.toString();
+        }
+        else return "SOLD OUT";
     }
 }
