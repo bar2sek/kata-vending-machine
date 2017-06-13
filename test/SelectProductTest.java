@@ -71,5 +71,16 @@ public class SelectProductTest {
         assertEquals("INSERT COIN\n", machine.dispenseProduct(VendingMachine.getCHIPS()));
     }
 
+    @Test
+    public void giveCorrectChangeWhenTooMuchMoneyInMachine() {
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("quarter");
+
+        assertEquals("25", machine.refundUser(VendingMachine.getCOLA()));
+    }
+
 
 }

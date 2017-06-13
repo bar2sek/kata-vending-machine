@@ -47,6 +47,7 @@ public class VendingMachine {
     public String dispenseProduct(Integer product) {
         Integer credit = getCredit();
         if (credit >= product) {
+            refundUser(product);
             setCredit(0);
             return "THANK YOU";
         }
@@ -54,5 +55,13 @@ public class VendingMachine {
             return product.toString();
         }
         else return "INSERT COIN\n";
+    }
+
+    public String refundUser(Integer product) {
+        if (credit > product) {
+            credit -= product;
+            return credit.toString();
+        }
+        else return "";
     }
 }
