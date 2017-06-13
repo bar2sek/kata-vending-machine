@@ -50,9 +50,9 @@ public class VendingMachine {
             setCredit(0);
             return "THANK YOU";
         }
-//        else if (credit > 0 && credit < product) {
-//            return "INSERT COIN\n";
-//        }
-        else return product.toString();
+        else if (credit > 0 && credit < product) {
+            return product.toString();
+        }
+        else return "INSERT COIN\n";
     }
 }
