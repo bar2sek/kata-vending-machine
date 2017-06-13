@@ -6,6 +6,7 @@ public class VendingMachine {
     private static final Integer CANDY_PRICE = 65;
     private Integer colaStock;
     private Integer chipsStock;
+    private Integer candyStock;
 
     public Integer getColaStock() {
         return colaStock;
@@ -30,8 +31,6 @@ public class VendingMachine {
     public void setCandyStock(Integer candyStock) {
         this.candyStock = candyStock;
     }
-
-    private Integer candyStock;
 
     public static Integer getColaPrice() {
         return COLA_PRICE;
@@ -101,7 +100,7 @@ public class VendingMachine {
         else return "INSERT COIN\n";
     }
 
-    public String checkStock() {
-        return "5";
+    public String checkStock(Integer productStock) {
+        return productStock.toString();
     }
 }

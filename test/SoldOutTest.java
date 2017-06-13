@@ -13,8 +13,9 @@ public class SoldOutTest {
 
     @Test
     public void checkStockOfChips() {
+        machine.setCandyStock(5);
 
-        assertEquals("5", machine.checkStock());
+        assertEquals("5", machine.checkStock(machine.getCandyStock()));
     }
 
 }
