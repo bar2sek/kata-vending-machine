@@ -82,5 +82,12 @@ public class SelectProductTest {
         assertEquals("25", machine.refundUser(VendingMachine.getCOLA()));
     }
 
+    @Test
+    public void returnCoinsWhenReturnIsPressed() {
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("quarter");
 
-}
+        assertEquals("50", machine.coinReturn());
+    }
+
+    }

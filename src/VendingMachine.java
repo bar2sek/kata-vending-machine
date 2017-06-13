@@ -64,4 +64,8 @@ public class VendingMachine {
         }
         else return "";
     }
+
+    public String coinReturn() {
+        return credit.toString();
+    }
 }
