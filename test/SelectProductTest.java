@@ -19,7 +19,7 @@ public class SelectProductTest {
         machine.acceptValidCoins("dime");
         machine.acceptValidCoins("nickel");
 
-        assertEquals("THANK YOU", machine.dispenseProduct(VendingMachine.getCANDY()));
+        assertEquals("THANK YOU", machine.dispenseProduct(VendingMachine.getCandyPrice()));
     }
 
     @Test
@@ -28,7 +28,7 @@ public class SelectProductTest {
         machine.acceptValidCoins("dime");
         machine.acceptValidCoins("nickel");
 
-        assertEquals("65", machine.dispenseProduct(VendingMachine.getCANDY()));
+        assertEquals("65", machine.dispenseProduct(VendingMachine.getCandyPrice()));
     }
 
     @Test
@@ -40,14 +40,14 @@ public class SelectProductTest {
         machine.acceptValidCoins("dime");
         machine.acceptValidCoins("nickel");
 
-        assertEquals("THANK YOU", machine.dispenseProduct(VendingMachine.getCOLA()));
+        assertEquals("THANK YOU", machine.dispenseProduct(VendingMachine.getColaPrice()));
     }
 
     @Test
     public void machineDispensesSodaWithIncorrectCredit() {
         machine.acceptValidCoins("quarter");
 
-        assertEquals("100", machine.dispenseProduct(VendingMachine.getCOLA()));
+        assertEquals("100", machine.dispenseProduct(VendingMachine.getColaPrice()));
     }
 
     @Test
@@ -55,20 +55,20 @@ public class SelectProductTest {
         machine.acceptValidCoins("quarter");
         machine.acceptValidCoins("quarter");
 
-        assertEquals("THANK YOU", machine.dispenseProduct(VendingMachine.getCHIPS()));
+        assertEquals("THANK YOU", machine.dispenseProduct(VendingMachine.getChipsPrice()));
     }
 
     @Test
     public void machineDispensesChipsWithIncorrectCredit() {
         machine.acceptValidCoins("quarter");
 
-        assertEquals("50", machine.dispenseProduct(VendingMachine.getCHIPS()));
+        assertEquals("50", machine.dispenseProduct(VendingMachine.getChipsPrice()));
     }
 
     @Test
     public void chipsButtonPressedAfterDispensingShowsInsertCoin() {
 
-        assertEquals("INSERT COIN\n", machine.dispenseProduct(VendingMachine.getCHIPS()));
+        assertEquals("INSERT COIN\n", machine.dispenseProduct(VendingMachine.getChipsPrice()));
     }
 
     @Test
@@ -79,7 +79,7 @@ public class SelectProductTest {
         machine.acceptValidCoins("quarter");
         machine.acceptValidCoins("quarter");
 
-        assertEquals("25", machine.refundUser(VendingMachine.getCOLA()));
+        assertEquals("25", machine.refundUser(VendingMachine.getColaPrice()));
     }
 
     @Test
@@ -90,4 +90,4 @@ public class SelectProductTest {
         assertEquals("INSERT COIN\n", machine.coinReturnPressed());
     }
 
-    }
+}

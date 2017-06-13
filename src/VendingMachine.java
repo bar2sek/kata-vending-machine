@@ -1,20 +1,48 @@
 
 public class VendingMachine {
 
-    private static final Integer COLA = 100;
-    private static final Integer CHIPS = 50;
-    private static final Integer CANDY = 65;
+    private static final Integer COLA_PRICE = 100;
+    private static final Integer CHIPS_PRICE = 50;
+    private static final Integer CANDY_PRICE = 65;
+    private Integer colaStock;
+    private Integer chipsStock;
 
-    public static Integer getCOLA() {
-        return COLA;
+    public Integer getColaStock() {
+        return colaStock;
     }
 
-    public static Integer getCHIPS() {
-        return CHIPS;
+    public void setColaStock(Integer colaStock) {
+        this.colaStock = colaStock;
     }
 
-    public static Integer getCANDY() {
-        return CANDY;
+    public Integer getChipsStock() {
+        return chipsStock;
+    }
+
+    public void setChipsStock(Integer chipsStock) {
+        this.chipsStock = chipsStock;
+    }
+
+    public Integer getCandyStock() {
+        return candyStock;
+    }
+
+    public void setCandyStock(Integer candyStock) {
+        this.candyStock = candyStock;
+    }
+
+    private Integer candyStock;
+
+    public static Integer getColaPrice() {
+        return COLA_PRICE;
+    }
+
+    public static Integer getChipsPrice() {
+        return CHIPS_PRICE;
+    }
+
+    public static Integer getCandyPrice() {
+        return CANDY_PRICE;
     }
     private Integer credit;
 
@@ -71,5 +99,9 @@ public class VendingMachine {
             return "INSERT COIN\n";
         }
         else return "INSERT COIN\n";
+    }
+
+    public String checkStock() {
+        return "5";
     }
 }
