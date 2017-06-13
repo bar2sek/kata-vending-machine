@@ -87,7 +87,7 @@ public class SelectProductTest {
         machine.acceptValidCoins("quarter");
         machine.acceptValidCoins("quarter");
 
-        assertEquals("50", machine.coinReturn());
+        assertEquals("INSERT COIN\n", machine.coinReturnPressed());
     }
 
     }

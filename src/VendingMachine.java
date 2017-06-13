@@ -65,7 +65,11 @@ public class VendingMachine {
         else return "";
     }
 
-    public String coinReturn() {
-        return credit.toString();
+    public String coinReturnPressed() {
+        if (credit > 0) {
+            setCredit(0);
+            return "INSERT COIN\n";
+        }
+        else return "INSERT COIN\n";
     }
 }
