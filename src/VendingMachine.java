@@ -106,4 +106,8 @@ public class VendingMachine {
         }
         else return "SOLD OUT";
     }
+
+    public Integer quantityOfQuarters() {
+        return null;
+    }
 }

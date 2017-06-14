@@ -25,4 +25,22 @@ public class SoldOutTest {
         assertEquals("SOLD OUT", machine.checkStock(machine.getCandyStock()));
     }
 
+    @Test
+    public void findNumberOfQuartersInMachine() {
+
+        assertEquals(5, machine.quantityOfQuarters());
+    }
+
+//    @Test
+//    public void findNumberOfNickelsInMachine() {
+//
+//        assertEquals("SOLD OUT", machine.checkStock(machine.getCandyStock()));
+//    }
+//
+//    @Test
+//    public void findNumberOfDimesInMachine() {
+//
+//        assertEquals("SOLD OUT", machine.checkStock(machine.getCandyStock()));
+//    }
+
 }
