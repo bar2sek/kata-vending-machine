@@ -32,16 +32,20 @@ public class SoldOutTest {
         assertEquals(new Integer(5), machine.quantityOfQuarters());
     }
 
-//    @Test
-//    public void findNumberOfNickelsInMachine() {
-//
-//        assertEquals("SOLD OUT", machine.checkStock(machine.getCandyStock()));
-//    }
-//
-//    @Test
-//    public void findNumberOfDimesInMachine() {
-//
-//        assertEquals("SOLD OUT", machine.checkStock(machine.getCandyStock()));
-//    }
+    @Test
+    public void findNumberOfNickelsInMachine() {
+        machine.setDimesInMachine(5);
+
+
+        assertEquals(new Integer(5), machine.quantityOfDimes());
+    }
+
+    @Test
+    public void findNumberOfDimesInMachine() {
+        machine.setNickelsInMachine(5);
+
+
+        assertEquals(new Integer(5), machine.quantityOfNickels());
+    }
 
 }

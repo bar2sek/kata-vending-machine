@@ -137,4 +137,12 @@ public class VendingMachine {
     public Integer quantityOfQuarters() {
         return getQuartersInMachine();
     }
+
+    public Integer quantityOfDimes() {
+        return getDimesInMachine();
+    }
+
+    public Integer quantityOfNickels() {
+        return getNickelsInMachine();
+    }
 }
