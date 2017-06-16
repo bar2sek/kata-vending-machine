@@ -7,6 +7,9 @@ public class VendingMachine {
     private Integer colaStock;
     private Integer chipsStock;
     private Integer candyStock;
+    private Integer quartersInMachine;
+    private Integer nickelsInMachine;
+    private Integer dimesInMachine;
 
     public Integer getColaStock() {
         return colaStock;
@@ -51,6 +54,30 @@ public class VendingMachine {
 
     public void setCredit(Integer credit) {
         this.credit = credit;
+    }
+
+    public Integer getQuartersInMachine() {
+        return quartersInMachine;
+    }
+
+    public void setQuartersInMachine(Integer quartersInMachine) {
+        this.quartersInMachine = quartersInMachine;
+    }
+
+    public Integer getNickelsInMachine() {
+        return nickelsInMachine;
+    }
+
+    public void setNickelsInMachine(Integer nickelsInMachine) {
+        this.nickelsInMachine = nickelsInMachine;
+    }
+
+    public Integer getDimesInMachine() {
+        return dimesInMachine;
+    }
+
+    public void setDimesInMachine(Integer dimesInMachine) {
+        this.dimesInMachine = dimesInMachine;
     }
 
     public String acceptValidCoins(String coin) {
@@ -108,6 +135,6 @@ public class VendingMachine {
     }
 
     public Integer quantityOfQuarters() {
-        return null;
+        return getQuartersInMachine();
     }
 }

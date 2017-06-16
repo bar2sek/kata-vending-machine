@@ -27,8 +27,9 @@ public class SoldOutTest {
 
     @Test
     public void findNumberOfQuartersInMachine() {
+        machine.setQuartersInMachine(5);
 
-        assertEquals(5, machine.quantityOfQuarters());
+        assertEquals(new Integer(5), machine.quantityOfQuarters());
     }
 
 //    @Test
