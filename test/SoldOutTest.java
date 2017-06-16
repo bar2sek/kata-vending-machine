@@ -29,23 +29,38 @@ public class SoldOutTest {
     public void findNumberOfQuartersInMachine() {
         machine.setQuartersInMachine(5);
 
-        assertEquals(new Integer(5), machine.quantityOfQuarters());
+        assertEquals(new Integer(5), machine.getQuartersInMachine());
     }
 
     @Test
     public void findNumberOfNickelsInMachine() {
-        machine.setDimesInMachine(5);
+        machine.setDimesInMachine(10);
 
 
-        assertEquals(new Integer(5), machine.quantityOfDimes());
+        assertEquals(new Integer(10), machine.getDimesInMachine());
     }
 
     @Test
     public void findNumberOfDimesInMachine() {
-        machine.setNickelsInMachine(5);
+        machine.setNickelsInMachine(15);
 
 
-        assertEquals(new Integer(5), machine.quantityOfNickels());
+        assertEquals(new Integer(15), machine.getNickelsInMachine());
     }
+
+//    @Test
+//    public void makeChangeWithAvailableCoinsInMachine() {
+//        machine.setQuartersInMachine(2);
+//        machine.setDimesInMachine(0);
+//        machine.setNickelsInMachine(0);
+//
+//        machine.acceptValidCoins("quarter");
+//        machine.acceptValidCoins("quarter");
+//        machine.acceptValidCoins("quarter");
+//
+//        machine.dispenseProduct(VendingMachine.getCandyPrice());
+//
+//        assertEquals("EXACT CHANGE ONLY", "");
+//    }
 
 }

@@ -91,11 +91,14 @@ public class VendingMachine {
     private void creditUser(String coin) {
         if (coin.equals("nickel")) {
             credit += 5;
+//            nickelsInMachine = new Integer(nickelsInMachine.intValue() + 1);
         }
         else if (coin.equals("dime")) {
             credit += 10;
+//            dimesInMachine = new Integer(dimesInMachine.intValue() + 1);
         }
         else { credit += 25; }
+//        quartersInMachine = new Integer(quartersInMachine.intValue() + 1);
     }
 
     public String dispenseProduct(Integer product) {
@@ -132,17 +135,5 @@ public class VendingMachine {
             return productStock.toString();
         }
         else return "SOLD OUT";
-    }
-
-    public Integer quantityOfQuarters() {
-        return getQuartersInMachine();
-    }
-
-    public Integer quantityOfDimes() {
-        return getDimesInMachine();
-    }
-
-    public Integer quantityOfNickels() {
-        return getNickelsInMachine();
     }
 }
