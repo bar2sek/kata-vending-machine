@@ -29,7 +29,7 @@ public class SoldOutTest {
     public void findNumberOfQuartersInMachine() {
         machine.setQuartersInMachine(5);
 
-        assertEquals(new Integer(5), machine.getQuartersInMachine());
+        assertEquals(5, machine.getQuartersInMachine());
     }
 
     @Test
@@ -37,7 +37,7 @@ public class SoldOutTest {
         machine.setDimesInMachine(10);
 
 
-        assertEquals(new Integer(10), machine.getDimesInMachine());
+        assertEquals(10, machine.getDimesInMachine());
     }
 
     @Test
@@ -45,22 +45,41 @@ public class SoldOutTest {
         machine.setNickelsInMachine(15);
 
 
-        assertEquals(new Integer(15), machine.getNickelsInMachine());
+        assertEquals(15, machine.getNickelsInMachine());
     }
 
-//    @Test
-//    public void makeChangeWithAvailableCoinsInMachine() {
-//        machine.setQuartersInMachine(2);
-//        machine.setDimesInMachine(0);
-//        machine.setNickelsInMachine(0);
-//
-//        machine.acceptValidCoins("quarter");
-//        machine.acceptValidCoins("quarter");
-//        machine.acceptValidCoins("quarter");
-//
-//        machine.dispenseProduct(VendingMachine.getCandyPrice());
-//
-//        assertEquals("EXACT CHANGE ONLY", "");
-//    }
+    @Test
+    public void attemptToMakeChangeWithNoCoinsInMachine() {
+        machine.setCredit(0);
 
+        machine.setQuartersInMachine(0);
+        machine.setDimesInMachine(0);
+        machine.setNickelsInMachine(0);
+
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("quarter");
+
+        machine.dispenseProduct(VendingMachine.getCandyPrice());
+
+        assertEquals("EXACT CHANGE ONLY", machine.returnChange());
+    }
+
+    @Test
+    public void makeCorrectChangeWithOnlyOneNickelInMachine() {
+        machine.setCredit(0);
+
+        machine.setQuartersInMachine(0);
+        machine.setDimesInMachine(0);
+        machine.setNickelsInMachine(1);
+
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("quarter");
+        machine.acceptValidCoins("dime");
+        machine.acceptValidCoins("dime");
+
+        machine.dispenseProduct(VendingMachine.getCandyPrice());
+
+        assertEquals("1 nickel", machine.returnChange());
+    }
 }

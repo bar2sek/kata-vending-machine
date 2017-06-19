@@ -7,9 +7,9 @@ public class VendingMachine {
     private Integer colaStock;
     private Integer chipsStock;
     private Integer candyStock;
-    private Integer quartersInMachine;
-    private Integer nickelsInMachine;
-    private Integer dimesInMachine;
+    private int quartersInMachine;
+    private int nickelsInMachine;
+    private int dimesInMachine;
 
     public Integer getColaStock() {
         return colaStock;
@@ -56,27 +56,27 @@ public class VendingMachine {
         this.credit = credit;
     }
 
-    public Integer getQuartersInMachine() {
+    public int getQuartersInMachine() {
         return quartersInMachine;
     }
 
-    public void setQuartersInMachine(Integer quartersInMachine) {
+    public void setQuartersInMachine(int quartersInMachine) {
         this.quartersInMachine = quartersInMachine;
     }
 
-    public Integer getNickelsInMachine() {
+    public int getNickelsInMachine() {
         return nickelsInMachine;
     }
 
-    public void setNickelsInMachine(Integer nickelsInMachine) {
+    public void setNickelsInMachine(int nickelsInMachine) {
         this.nickelsInMachine = nickelsInMachine;
     }
 
-    public Integer getDimesInMachine() {
+    public int getDimesInMachine() {
         return dimesInMachine;
     }
 
-    public void setDimesInMachine(Integer dimesInMachine) {
+    public void setDimesInMachine(int dimesInMachine) {
         this.dimesInMachine = dimesInMachine;
     }
 
@@ -91,21 +91,23 @@ public class VendingMachine {
     private void creditUser(String coin) {
         if (coin.equals("nickel")) {
             credit += 5;
-//            nickelsInMachine = new Integer(nickelsInMachine.intValue() + 1);
+            nickelsInMachine ++;
         }
         else if (coin.equals("dime")) {
             credit += 10;
-//            dimesInMachine = new Integer(dimesInMachine.intValue() + 1);
+            dimesInMachine ++;
         }
-        else { credit += 25; }
-//        quartersInMachine = new Integer(quartersInMachine.intValue() + 1);
+        else {
+            credit += 25;
+            quartersInMachine ++;
+        }
     }
 
     public String dispenseProduct(Integer product) {
         Integer credit = getCredit();
         if (credit >= product) {
             refundUser(product);
-            setCredit(0);
+            returnChange();
             return "THANK YOU";
         }
         else if (credit > 0 && credit < product) {
@@ -135,5 +137,48 @@ public class VendingMachine {
             return productStock.toString();
         }
         else return "SOLD OUT";
+    }
+
+    public String returnChange() {
+        int dimes = this.dimesInMachine;
+        int nickels = this.nickelsInMachine;
+
+        if (credit == 20) {
+            if (dimes >= 2) {
+                return "2 dimes";
+            }
+            else if (dimes >= 1 && nickels >= 2) {
+                return "1 dime, 2 nickels";
+            }
+            else if (dimes >= 0 && nickels >= 4) {
+                return "4 nickels";
+            }
+            else return "EXACT CHANGE ONLY";
+        }
+        else if (credit == 15) {
+            if (dimes >= 1 && nickels >= 1) {
+                return "1 dime, 1 nickel";
+            }
+            else if (dimes == 0 && nickels >= 3) {
+                return "3 nickels";
+            }
+            else return "EXACT CHANGE ONLY";
+        }
+        else if (credit == 10) {
+            if (dimes >= 1) {
+                return "1 dime";
+            }
+            else if (dimes == 0 && nickels >= 2) {
+                return "2 nickels";
+            }
+            else return "EXACT CHANGE ONLY";
+        }
+        else if (credit == 5) {
+            if (nickels >= 1) {
+                return "1 nickel";
+            }
+            else return "EXACT CHANGE ONLY";
+        }
+        else return "EXACT CHANGE ONLY";
     }
 }
