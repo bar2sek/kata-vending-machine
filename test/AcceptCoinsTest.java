@@ -15,7 +15,7 @@ public class AcceptCoinsTest {
     @Test
     public void machineAbleToIdentifyBadCoinsInserted() {
 
-        String coinInserted = "asdfasfasdf";
+        String coinInserted = "penny";
 
         assertEquals("INSERT COIN\n", machine.acceptValidCoins(coinInserted));
     }
