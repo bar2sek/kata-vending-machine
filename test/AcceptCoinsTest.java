@@ -12,6 +12,12 @@ public class AcceptCoinsTest {
         machine.setCredit(0);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void makeSureCoinIsNotNull() throws Exception {
+
+        machine.acceptValidCoins(null);
+    }
+
     @Test
     public void machineAbleToIdentifyBadCoinsInserted() {
 
@@ -48,5 +54,4 @@ public class AcceptCoinsTest {
 
         assertEquals(40, machine.getCredit());
     }
-
 }
