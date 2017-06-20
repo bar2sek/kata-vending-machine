@@ -1,58 +1,58 @@
 
 public class VendingMachine {
 
-    private static final Integer COLA_PRICE = 100;
-    private static final Integer CHIPS_PRICE = 50;
-    private static final Integer CANDY_PRICE = 65;
-    private Integer colaStock;
-    private Integer chipsStock;
-    private Integer candyStock;
+    private static final int COLA_PRICE = 100;
+    private static final int CHIPS_PRICE = 50;
+    private static final int CANDY_PRICE = 65;
+    private int colaStock;
+    private int chipsStock;
+    private int candyStock;
     private int quartersInMachine;
     private int nickelsInMachine;
     private int dimesInMachine;
 
-    public Integer getColaStock() {
+    public int getColaStock() {
         return colaStock;
     }
 
-    public void setColaStock(Integer colaStock) {
+    public void setColaStock(int colaStock) {
         this.colaStock = colaStock;
     }
 
-    public Integer getChipsStock() {
+    public int getChipsStock() {
         return chipsStock;
     }
 
-    public void setChipsStock(Integer chipsStock) {
+    public void setChipsStock(int chipsStock) {
         this.chipsStock = chipsStock;
     }
 
-    public Integer getCandyStock() {
+    public int getCandyStock() {
         return candyStock;
     }
 
-    public void setCandyStock(Integer candyStock) {
+    public void setCandyStock(int candyStock) {
         this.candyStock = candyStock;
     }
 
-    public static Integer getColaPrice() {
+    public static int getColaPrice() {
         return COLA_PRICE;
     }
 
-    public static Integer getChipsPrice() {
+    public static int getChipsPrice() {
         return CHIPS_PRICE;
     }
 
-    public static Integer getCandyPrice() {
+    public static int getCandyPrice() {
         return CANDY_PRICE;
     }
-    private Integer credit;
+    private int credit;
 
-    public Integer getCredit() {
+    public int getCredit() {
         return credit;
     }
 
-    public void setCredit(Integer credit) {
+    public void setCredit(int credit) {
         this.credit = credit;
     }
 
@@ -83,7 +83,7 @@ public class VendingMachine {
     public String acceptValidCoins(String coin) {
         if (coin.equals("nickel") || coin.equals("dime") || coin.equals("quarter")) {
             creditUser(coin);
-            return credit.toString();
+            return Integer.toString(credit);
         }
         else return "INSERT COIN\n";
     }
@@ -103,23 +103,23 @@ public class VendingMachine {
         }
     }
 
-    public String dispenseProduct(Integer product) {
-        Integer credit = getCredit();
+    public String dispenseProduct(int product) {
+        int credit = getCredit();
         if (credit >= product) {
             refundUser(product);
             returnChange();
             return "THANK YOU";
         }
         else if (credit > 0 && credit < product) {
-            return product.toString();
+            return Integer.toString(product);
         }
         else return "INSERT COIN\n";
     }
 
-    public String refundUser(Integer product) {
+    public String refundUser(int product) {
         if (credit > product) {
             credit -= product;
-            return credit.toString();
+            return Integer.toString(credit);
         }
         else return "";
     }
@@ -132,9 +132,9 @@ public class VendingMachine {
         else return "INSERT COIN\n";
     }
 
-    public String checkStock(Integer productStock) {
+    public String checkStock(int productStock) {
         if (productStock > 0) {
-            return productStock.toString();
+            return Integer.toString(productStock);
         }
         else return "SOLD OUT";
     }

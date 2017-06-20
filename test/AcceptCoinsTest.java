@@ -35,8 +35,8 @@ public class AcceptCoinsTest {
     @Test
     public void addCreditsForMultipleCoinsInserted() {
 
-        assertEquals("25", machine.acceptValidCoins("quarter"));
-        assertEquals("35", machine.acceptValidCoins("dime"));
+        assertEquals("expect quarter", "25", machine.acceptValidCoins("quarter"));
+        assertEquals("expect dime","35", machine.acceptValidCoins("dime"));
     }
 
     @Test
@@ -46,7 +46,7 @@ public class AcceptCoinsTest {
         machine.acceptValidCoins("dime");
         machine.acceptValidCoins("nickel");
 
-        assertEquals(new Integer(40), machine.getCredit());
+        assertEquals(40, machine.getCredit());
     }
 
 }
