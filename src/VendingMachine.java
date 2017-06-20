@@ -4,12 +4,12 @@ public class VendingMachine {
     private static final int COLA_PRICE = 100;
     private static final int CHIPS_PRICE = 50;
     private static final int CANDY_PRICE = 65;
-    private int colaStock;
-    private int chipsStock;
-    private int candyStock;
-    private int quartersInMachine;
-    private int nickelsInMachine;
-    private int dimesInMachine;
+    private int colaStock = 0;
+    private int chipsStock = 0;
+    private int candyStock = 0;
+    private int quartersInMachine = 0;
+    private int nickelsInMachine = 0;
+    private int dimesInMachine = 0;
 
     public int getColaStock() {
         return colaStock;
