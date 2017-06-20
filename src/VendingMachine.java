@@ -85,7 +85,7 @@ public class VendingMachine {
             creditUser(coin);
             return Integer.toString(credit);
         }
-        else return "INSERT COIN\n";
+        else return "INSERT COIN";
     }
 
     private void creditUser(String coin) {
@@ -113,7 +113,7 @@ public class VendingMachine {
         else if (credit > 0 && credit < product) {
             return Integer.toString(product);
         }
-        else return "INSERT COIN\n";
+        else return "INSERT COIN";
     }
 
     public String refundUser(int product) {
@@ -127,9 +127,9 @@ public class VendingMachine {
     public String coinReturnPressed() {
         if (credit > 0) {
             setCredit(0);
-            return "INSERT COIN\n";
+            return "INSERT COIN";
         }
-        else return "INSERT COIN\n";
+        else return "INSERT COIN";
     }
 
     public String checkStock(int productStock) {

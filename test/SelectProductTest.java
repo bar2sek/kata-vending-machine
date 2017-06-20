@@ -68,7 +68,7 @@ public class SelectProductTest {
     @Test
     public void chipsButtonPressedAfterDispensingShowsInsertCoin() {
 
-        assertEquals("INSERT COIN\n", machine.dispenseProduct(VendingMachine.getChipsPrice()));
+        assertEquals("INSERT COIN", machine.dispenseProduct(VendingMachine.getChipsPrice()));
     }
 
     @Test
@@ -87,7 +87,7 @@ public class SelectProductTest {
         machine.acceptValidCoins("quarter");
         machine.acceptValidCoins("quarter");
 
-        assertEquals("INSERT COIN\n", machine.coinReturnPressed());
+        assertEquals("INSERT COIN", machine.coinReturnPressed());
     }
 
 }

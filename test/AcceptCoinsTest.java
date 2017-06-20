@@ -17,7 +17,7 @@ public class AcceptCoinsTest {
 
         String coinInserted = "penny";
 
-        assertEquals("INSERT COIN\n", machine.acceptValidCoins(coinInserted));
+        assertEquals("INSERT COIN", machine.acceptValidCoins(coinInserted));
     }
 
     @Test
