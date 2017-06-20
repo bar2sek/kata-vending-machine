@@ -85,7 +85,10 @@ public class VendingMachine {
             creditUser(coin);
             return Integer.toString(credit);
         }
-        else return "INSERT COIN";
+        else {
+            coinReturnPressed();
+            return "INSERT COIN";
+        }
     }
 
     private void creditUser(String coin) {
